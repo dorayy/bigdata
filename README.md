@@ -13,9 +13,39 @@ Connect to hdfs :
   cd ~
 ```
 
-Créer le repertoire data sur la machine namenode et récupérer les datas:
+```
+apt-get update
+apt-get install python3
+apt-get install python3-pip
+apt-get install cron
+pip3 install requests
+apt-get install nano && apt-get install default-jre
+```
+
+# Modifier le fichier /etc/hadoop/hadoop-env.sh
 
 ```
-  mkdir data
-  python app.py
+nano /etc/hadoop/hadoop-env.sh
+```
+
+# Décommenter la ligne JAVA_HOME et remplacer par
+
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+
+Add the following line to the end of the file and run service cron start:
+
+```
+crontab -e
+```
+
+```
+service cron start
+```
+
+\* /12 \* \* \* python3 /root/code/app.py \* /6 \* \* \* cd /root/code/ && ./hadoop-launch.sh
+
+Create a directory in HDFS:
+
+```
+  hdfs dfs -mkdir /data
 ```
