@@ -47,30 +47,26 @@ response8 = response8['response']
 
 
 # save json to file
-with open('./flights.json', 'w') as outfile:
+with open('/root/data/flights.json', 'w') as outfile:
     json.dump(response, outfile)
 
-with open('./delays_departures.json', 'w') as outfile:
+with open('/root/data/delays_departures.json', 'w') as outfile:
     json.dump(response2, outfile)
 
-with open('./delays_arrivals.json', 'w') as outfile:
+with open('/root/data/delays_arrivals.json', 'w') as outfile:
     json.dump(response3, outfile)
 
-with open('./airlines.json', 'w') as outfile:
+with open('/root/data/airlines.json', 'w') as outfile:
     json.dump(response4, outfile)
 
-with open('./airports.json', 'w') as outfile:
+with open('/root/data/airports.json', 'w') as outfile:
     json.dump(response5, outfile)
 
-with open('./cities.json', 'w') as outfile:
+with open('/root/data/cities.json', 'w') as outfile:
     json.dump(response6, outfile)
 
-with open('./fleets.json', 'w') as outfile:
+with open('/root/data/fleets.json', 'w') as outfile:
     json.dump(response7, outfile)
 
-with open('./contries.json', 'w') as outfile:
+with open('/root/data/contries.json', 'w') as outfile:
     json.dump(response8, outfile)
-
-
-
-

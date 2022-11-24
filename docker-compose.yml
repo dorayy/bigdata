@@ -9,8 +9,9 @@ services:
       - 9000:9000
     volumes:
       - hadoop_namenode:/hadoop/dfs/name
-      - hadoop_namenode:/home/data
-      - hadoop_namenode:/home/code
+      - hadoop_namenode:/root/data
+      - ./utils/app.py:/root/code/app.py
+      - ./utils/hadoop-launch.sh:/root/code/hadoop-launch.sh
     environment:
       - CLUSTER_NAME=test
     env_file:
